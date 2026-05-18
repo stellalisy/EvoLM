@@ -1,0 +1,41 @@
+#!/bin/bash
+# Local environment-specific configuration
+# Copy this file to env/local_config.sh and customize for your environment.
+# This file is sourced by scripts/launch.sh if it exists.
+
+# Activate your Python environment
+# source /path/to/your/.venv/bin/activate
+
+# Set your HuggingFace token
+# export HF_TOKEN=hf_YOUR_TOKEN_HERE
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
+# Stop any existing Ray processes
+ray stop --force
+
+# HuggingFace cache settings
+# export HF_DATASETS_CACHE=${HF_DATASETS_CACHE:-$(pwd)/local_dataset_cache}
+# export HF_HOME=/path/to/your/hf_cache
+# Use offline mode to avoid proxy errors on compute nodes (models are pre-cached)
+# export HF_HUB_OFFLINE=1
+
+# VLLM settings
+export HOSTED_VLLM_API_BASE=${HOSTED_VLLM_API_BASE:-}
+export HLE_JUDGE_MODEL=${HLE_JUDGE_MODEL:-}
+export RUBRIC_JUDGE_MODEL=${RUBRIC_JUDGE_MODEL:-}
+export CITATION_JUDGE_MODEL=${CITATION_JUDGE_MODEL:-}
+
+# OpenAI settings (uncomment if using)
+# export OPENAI_API_KEY=sk-proj-...
+# export HLE_JUDGE_MODEL=gpt-4o-mini
+# export RUBRIC_JUDGE_MODEL=gpt-4o-mini
+
+# Azure OpenAI settings (uncomment if using)
+# export AZURE_OPENAI_API_KEY=...
+# export AZURE_OPENAI_ENDPOINT=https://...
+
+# Weights & Biases
+# export WANDB_ENTITY=your_wandb_entity
+
+# Output directory base (default: ./output)
+# export OUTPUT_DIR_BASE=/path/to/your/output/directory

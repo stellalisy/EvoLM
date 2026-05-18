@@ -1,0 +1,23 @@
+#!/bin/bash
+# SLURM configuration template for Rubric Judge Server
+# Copy this file to env/slurm_judge_server_template.sh and customize for your cluster.
+
+# SLURM account and partition
+SLURM_ACCOUNT=your_account
+SLURM_PARTITION=gpu
+
+# SLURM resource allocation
+SLURM_NODES=1
+SLURM_CPUS=30
+SLURM_MEMORY=500G
+SLURM_TIME=1-00:00:00
+# Number of GPUs to request in SLURM job
+# VLLM_DATA_PARALLEL_SIZE will be automatically calculated from SLURM_GPUS / VLLM_TENSOR_PARALLEL_SIZE
+SLURM_GPUS=8
+SLURM_JOB_NAME=rubric_judge_server
+
+# SLURM output directory
+SLURM_OUTPUT_DIR=${ROOT_DIR:-$(pwd)}/scratch/slurm
+
+# Additional SLURM options (e.g., --exclusive, --constraint, etc.)
+SLURM_EXTRA_OPTIONS=""

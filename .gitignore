@@ -66,11 +66,14 @@ ipython_config.py
 # Environments
 .env
 .venv
-env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Local env config (contains secrets) - but keep templates
+env/*
+!env/*.template
 
 # IDE
 .idea/
@@ -89,6 +92,9 @@ log*/
 scratch/
 local_dataset_cache/
 cache/
+
+# API credentials (keep templates)
+open_instruct/llm/api_info.yaml
 
 # Eval artifacts
 **/open_ai_responses/**

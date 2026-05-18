@@ -1,0 +1,9 @@
+# For Azure use of GPT-4.1
+# Set AZURE_API_BASE, AZURE_API_VERSION, AZURE_API_KEY env vars before use
+# (e.g., via: source scripts/configure_api.sh gpt-4.1)
+gpt-4.1-2025-04-14:
+  - client_class: "openai.AzureOpenAI"
+    azure_deployment: "gpt-4.1"
+    azure_endpoint: "${AZURE_API_BASE}"
+    api_version: "${AZURE_API_VERSION}"
+    api_key: "${AZURE_API_KEY}"
