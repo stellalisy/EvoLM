@@ -175,10 +175,14 @@ python scripts/eval/merge_eval_shards.py \
 If you use this code, please cite:
 
 ```bibtex
-@article{evolm2026,
-  title={EvoLM: Evolving Rubric-Based LLM Evaluation and Training},
-  author={...},
-  year={2026}
+@misc{li2026evolmselfevolvinglanguagemodels,
+      title={EvoLM: Self-Evolving Language Models through Co-Evolved Discriminative Rubrics}, 
+      author={Shuyue Stella Li and Rui Xin and Teng Xiao and Yike Wang and Rulin Shao and Zoey Hao and Melanie Sclar and Sewoong Oh and Faeze Brahman and Pang Wei Koh and Yulia Tsvetkov},
+      year={2026},
+      eprint={2605.03871},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2605.03871}, 
 }
 ```
 
