@@ -4,7 +4,7 @@ Standalone script to generate a rubric from a question and score one or more ans
 the frozen judge model.
 
 Pipeline:
-  1. Load the rubric generator model (default: stellalisy/rubric_generator_v0_0302) via vLLM
+  1. Load the rubric generator model (default: Qwen/Qwen3-8B) via vLLM
   2. Generate a rubric for the given question
   3. Load the frozen judge model (default: Qwen/Qwen3-1.7B) via vLLM
   4. Score the provided answer(s) against the rubric
@@ -85,7 +85,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--rubric", default=None, help="Pre-supplied rubric text. Skips rubric generation when provided.")
 
     # Models
-    p.add_argument("--rubric_model", default="stellalisy/rubric_generator_v0_0302",
+    p.add_argument("--rubric_model", default="Qwen/Qwen3-8B",
                    help="HF model ID for rubric generation.")
     p.add_argument("--judge_model", default="Qwen/Qwen3-1.7B",
                    help="HF model ID for the frozen judge.")

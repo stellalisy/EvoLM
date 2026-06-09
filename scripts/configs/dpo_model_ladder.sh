@@ -1,10 +1,11 @@
 #!/bin/bash
-# Configuration for scottgeng00/dpo_model_ladder dataset
+# Configuration for Tulu 3 preference mixture dataset
+# (allenai/llama-3.1-tulu-3-8b-preference-mixture)
 
 # Dataset configuration
-DATASET_MIXER_LIST="scottgeng00/dpo_model_ladder 1.0"
+DATASET_MIXER_LIST="allenai/llama-3.1-tulu-3-8b-preference-mixture 1.0"
 DATASET_MIXER_LIST_SPLITS="train"
-DATASET_MIXER_EVAL_LIST="scottgeng00/dpo_model_ladder 1.0"
+DATASET_MIXER_EVAL_LIST="allenai/llama-3.1-tulu-3-8b-preference-mixture 1.0"
 DATASET_MIXER_EVAL_LIST_SPLITS="train"
 
 # Augment experiment name with dataset identifier using lazy evaluation

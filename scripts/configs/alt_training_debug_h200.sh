@@ -89,7 +89,7 @@ VERBOSE=true
 
 # Use local debug dataset (5k samples)
 # To generate this dataset, run:
-#   python scripts/data/create_debug_dataset.py scottgeng00/dpo_model_ladder data/debug_dataset_5k.jsonl 5000
+#   python scripts/data/create_debug_dataset.py allenai/llama-3.1-tulu-3-8b-preference-mixture data/debug_dataset_5k.jsonl 5000
 DATASET_MIXER_LIST="data/debug_dataset_500.jsonl 1.0"
 DATASET_MIXER_LIST_SPLITS="train"
 DATASET_MIXER_EVAL_LIST="data/debug_dataset_500.jsonl 1.0"

@@ -33,7 +33,7 @@ shift 3
 DEFAULT_GPUS=${DEFAULT_GPUS:-1}
 DEFAULT_NUM_WORKERS=${DEFAULT_NUM_WORKERS:-1}
 DEFAULT_CPUS_PER_TASK=${DEFAULT_CPUS_PER_TASK:-8}
-EVAL_QOS=${EVAL_QOS:-h100_sage_high}
+EVAL_QOS=${EVAL_QOS:-your_qos}
 
 # Optional Omega subtask grouping:
 #   0 => disabled (one job per expanded Omega subtask)
@@ -527,7 +527,7 @@ PY
         cat > "${SBATCH_SCRIPT}" << EOF
 #!/bin/bash
 #SBATCH --job-name=${JOB_NAME}
-#SBATCH --account=sage
+#SBATCH --account=${SLURM_ACCOUNT:-your_account}
 #SBATCH --qos=${EVAL_QOS}
 #SBATCH --nodes=1
 #SBATCH --ntasks=1

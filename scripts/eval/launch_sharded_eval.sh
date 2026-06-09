@@ -27,7 +27,7 @@ STEP=${4:?Error: step required}
 TASK=${5:?Error: task required}
 NUM_SHARDS=${6:?Error: num_shards required}
 
-EVAL_QOS=${EVAL_QOS:-h100_sage_high}
+EVAL_QOS=${EVAL_QOS:-your_qos}
 GPUS_PER_SHARD=${GPUS_PER_SHARD:-1}
 OLD_NUM_SHARDS=${OLD_NUM_SHARDS:-0}
 
@@ -80,7 +80,7 @@ for ((SID=0; SID<NUM_SHARDS; SID++)); do
     JOB_ID=$(sbatch --parsable <<EOF
 #!/bin/bash
 #SBATCH --job-name=${JOB_NAME}
-#SBATCH --account=sage
+#SBATCH --account=${SLURM_ACCOUNT:-your_account}
 #SBATCH --qos=${EVAL_QOS}
 #SBATCH --nodes=1
 #SBATCH --ntasks=1

@@ -81,8 +81,8 @@ SBATCH_SCRIPT=$(mktemp)
 cat > "${SBATCH_SCRIPT}" << 'OUTER_EOF'
 #!/bin/bash
 #SBATCH --job-name=PLACEHOLDER_JOB_NAME
-#SBATCH --account=sage
-#SBATCH --qos=h100_sage_high
+#SBATCH --account=${SLURM_ACCOUNT:-your_account}
+#SBATCH --qos=${EVAL_QOS:-your_qos}
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
